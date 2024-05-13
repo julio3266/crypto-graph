@@ -2,7 +2,7 @@ import React from "react";
 import { AnimatedView, Btn, Container, HomeIcon, SearchIcon, WalletIcon } from './styles'
 
 import { assignTestId } from "@Src/utils/QualityAssurance";
-import { NavigationHelpers, ParamListBase, TabNavigationState } from "@react-navigation/native";
+import { NavigationHelpers, ParamListBase, TabNavigationState, useNavigation } from "@react-navigation/native";
 import { BottomTabDescriptorMap, BottomTabNavigationEventMap } from "@react-navigation/bottom-tabs/lib/typescript/src/types";
 
 export interface CustomTabBarProps {
@@ -22,19 +22,18 @@ export const CustomTabBar: React.FC<CustomTabBarProps> = ({
         <Container {...assignTestId("View", testID)}>
             {
                 state?.routes.map((route, index: number) => {
-                    const isFocused = state.index;
+                    const isFocused = state.index === index;
 
                     const onPress = () => {
-
                         const event = navigation.emit({
                             type: 'tabPress',
                             target: route.key,
-                            canPreventDefault: true,
+                            canPreventDefault: true
                         });
-                        if (!isFocused && !event.defaultPrevented) {
-                            navigation.navigate(route.name)
-                        }
 
+                        if (!isFocused && !event.defaultPrevented) {
+                            navigation.navigate(route.name);
+                        }
                     };
 
                     return (
@@ -54,8 +53,6 @@ export const CustomTabBar: React.FC<CustomTabBarProps> = ({
                                     route.name === 'Wallet' && (<WalletIcon />)
 
                                 }
-
-
                             </Btn>
                         </AnimatedView>
                     )

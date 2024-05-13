@@ -7,6 +7,7 @@ import { CustomTabBar } from '@Src/Components/CustomTabBar';
 import { StatusBar } from 'expo-status-bar';
 import { Search } from '@Pages/Search';
 import { SplashScreen } from '@Pages/SplashScreen';
+import { Wallet } from '@Pages/Wallet';
 
 
 const Tab = createBottomTabNavigator();
@@ -34,7 +35,7 @@ export const Routes = () => {
                 >
                     <Tab.Screen name="Home" component={Dashboard} />
                     <Tab.Screen name="Search" component={Search} />
-                    <Tab.Screen name="Wallet" component={Search} />
+                    <Tab.Screen name="Wallet" component={Wallet} />
                 </Tab.Navigator>
             </NavigationContainer>
 
