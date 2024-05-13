@@ -4,14 +4,15 @@ import Svg, { SvgProps, Path, Circle } from "react-native-svg"
 interface SVGRProps {
     title?: string;
     titleId?: string;
+    color: string;
 }
 
 export const Home = (props: SvgProps) => (
     <Svg
-        width={32}
-        height={32}
+        width={30}
+        height={30}
         fill="none"
-        stroke='#FF409A'
+        stroke={props.color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
@@ -24,12 +25,12 @@ export const Home = (props: SvgProps) => (
 )
 
 
-export const Search = ({ title, titleId, ...props }: SvgProps & SVGRProps) => (
+export const Search = ({ title, titleId, color, ...props }: SvgProps & SVGRProps) => (
     <Svg
-        width={32}
-        height={32}
+        width={30}
+        height={30}
         fill="none"
-        stroke="#FF409A"
+        stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
@@ -44,12 +45,12 @@ export const Search = ({ title, titleId, ...props }: SvgProps & SVGRProps) => (
 )
 
 
-export const Wallet = ({ title, titleId, ...props }: SvgProps & SVGRProps) => (
+export const Wallet = ({ title, titleId, color, ...props }: SvgProps & SVGRProps) => (
     <Svg
-        width={40}
-        height={40}
+        width={35}
+        height={35}
         fill="none"
-        stroke="#FF409A"
+        stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
@@ -58,18 +59,18 @@ export const Wallet = ({ title, titleId, ...props }: SvgProps & SVGRProps) => (
     >
         {title ? <title id={titleId}>{title}</title> : null}
         <Path
-            stroke="#FF409A"
+            stroke={color}
             d="M19 20H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2Z"
         />
         <Path
-            fill="#FF409A"
-            stroke="#FF409A"
+            fill={color}
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             d="M16.5 14a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Z"
         />
         <Path
-            stroke="#FF409A"
+            stroke={color}
             d="M18 7V5.603a2 2 0 0 0-2.515-1.932l-11 2.933A2 2 0 0 0 3 8.537V9"
         />
     </Svg>

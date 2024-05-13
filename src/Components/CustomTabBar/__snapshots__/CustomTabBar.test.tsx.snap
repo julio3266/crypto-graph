@@ -9,8 +9,9 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
       "backgroundColor": "#262250",
       "borderTopLeftRadius": 30,
       "flexDirection": "row",
-      "height": "10%",
-      "justifyContent": "space-around",
+      "height": "9%",
+      "justifyContent": "space-between",
+      "width": "100%",
     }
   }
   testID="View_CustomTabBarID"
@@ -20,12 +21,19 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
     collapsable={false}
     style={
       {
-        "borderBottomLeftRadius": 8,
-        "borderBottomRightRadius": 8,
-        "borderTopLeftRadius": 8,
-        "borderTopRightRadius": 8,
+        "alignItems": "center",
         "flexDirection": "row",
         "height": "35%",
+        "justifyContent": "center",
+        "opacity": 1,
+        "transform": [
+          {
+            "scaleX": 1,
+          },
+          {
+            "scaleY": 1,
+          },
+        ],
       }
     }
     testID="Lottie_CustomTabBarID_tabBarAnimatedView_0"
@@ -43,22 +51,33 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
+          "alignItems": "center",
+          "backgroundColor": "#FF409A",
+          "borderBottomLeftRadius": 60,
+          "borderBottomRightRadius": 60,
+          "borderTopLeftRadius": 60,
+          "borderTopRightRadius": 60,
+          "height": 55,
+          "justifyContent": "center",
           "opacity": 1,
+          "width": 98,
         }
       }
       testID="TouchableOpacity_CustomTabBarID_tabBarBtn_0"
     >
       <RNSVGSvgView
         align="xMidYMid"
-        bbHeight={32}
-        bbWidth={32}
+        bbHeight={30}
+        bbWidth={30}
+        color={4294967295}
         fill="none"
         focusable={false}
-        height={32}
+        height={30}
+        isFocused={true}
         meetOrSlice={0}
         minX={0}
         minY={0}
-        stroke="#FF409A"
+        stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
@@ -71,14 +90,15 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
             {},
             {
               "flex": 0,
-              "height": 32,
-              "width": 32,
+              "height": 30,
+              "width": 30,
             },
           ]
         }
+        tintColor={4294967295}
         vbHeight={24}
         vbWidth={24}
-        width={32}
+        width={30}
       >
         <RNSVGGroup
           fill={null}
@@ -91,7 +111,7 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
               "strokeLinejoin",
             ]
           }
-          stroke={4294918298}
+          stroke={4294967295}
           strokeLinecap={1}
           strokeLinejoin={1}
           strokeWidth={2}
@@ -104,6 +124,18 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
           />
         </RNSVGGroup>
       </RNSVGSvgView>
+      <Text
+        style={
+          {
+            "color": "#fff",
+            "fontSize": 14,
+            "fontWeight": "700",
+            "textAlign": "center",
+          }
+        }
+      >
+        Home
+      </Text>
     </View>
   </View>
   <View
@@ -111,12 +143,19 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
     collapsable={false}
     style={
       {
-        "borderBottomLeftRadius": 8,
-        "borderBottomRightRadius": 8,
-        "borderTopLeftRadius": 8,
-        "borderTopRightRadius": 8,
+        "alignItems": "center",
         "flexDirection": "row",
         "height": "35%",
+        "justifyContent": "center",
+        "opacity": 0.5,
+        "transform": [
+          {
+            "scaleX": 1,
+          },
+          {
+            "scaleY": 1,
+          },
+        ],
       }
     }
     testID="Lottie_CustomTabBarID_tabBarAnimatedView_1"
@@ -134,7 +173,16 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "height": 45,
+          "justifyContent": "center",
           "opacity": 1,
+          "width": 98,
         }
       }
       testID="TouchableOpacity_CustomTabBarID_tabBarBtn_1"
