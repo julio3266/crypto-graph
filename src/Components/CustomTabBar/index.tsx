@@ -1,13 +1,15 @@
 import React from "react";
-import { Container } from './styles'
-import { Text, TouchableOpacity } from "react-native";
+import { AnimatedView, Btn, Container, HomeIcon, SearchIcon, WalletIcon } from './styles'
+
 import { assignTestId } from "@Src/utils/QualityAssurance";
+import { NavigationHelpers, ParamListBase, TabNavigationState } from "@react-navigation/native";
+import { BottomTabDescriptorMap, BottomTabNavigationEventMap } from "@react-navigation/bottom-tabs/lib/typescript/src/types";
 
 export interface CustomTabBarProps {
     testID?: string;
-    state: any;
-    descriptors: any;
-    navigation: any;
+    state: TabNavigationState<ParamListBase>;
+    descriptors: BottomTabDescriptorMap;
+    navigation: NavigationHelpers<ParamListBase, BottomTabNavigationEventMap>;
 }
 
 export const CustomTabBar: React.FC<CustomTabBarProps> = ({
@@ -18,16 +20,47 @@ export const CustomTabBar: React.FC<CustomTabBarProps> = ({
 }) => {
     return (
         <Container {...assignTestId("View", testID)}>
-            {/* {state?.routes.map((route: any, index: any) => {
-                const { options } = descriptors[route.key];
-                return ( */}
-            <TouchableOpacity {...assignTestId('TouchableOpacity', `${testID}_tabBarBtn`)} >
-                <Text {...assignTestId('Text', `${testID}_tabBarBtnTitle`)}>
-                    teste
-                </Text>
-            </TouchableOpacity>
-            {/* );
-            })} */}
+            {
+                state?.routes.map((route, index: number) => {
+                    const isFocused = state.index;
+
+                    const onPress = () => {
+
+                        const event = navigation.emit({
+                            type: 'tabPress',
+                            target: route.key,
+                            canPreventDefault: true,
+                        });
+                        if (!isFocused && !event.defaultPrevented) {
+                            navigation.navigate(route.name)
+                        }
+
+                    };
+
+                    return (
+                        <AnimatedView
+                            {...assignTestId('Lottie', `${testID}_tabBarAnimatedView_${index}`)}
+                            key={index}
+                        >
+                            <Btn
+                                onPress={onPress}
+                                {
+                                ...assignTestId('TouchableOpacity', `${testID}_tabBarBtn_${index}`)
+                                }
+                            >
+                                {
+                                    route.name === 'Home' && (<HomeIcon />) ||
+                                    route.name === 'Search' && (<SearchIcon />) ||
+                                    route.name === 'Wallet' && (<WalletIcon />)
+
+                                }
+
+
+                            </Btn>
+                        </AnimatedView>
+                    )
+                })
+            }
         </Container>
     );
 
