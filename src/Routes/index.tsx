@@ -9,9 +9,7 @@ import { Search } from '@Pages/Search';
 import { SplashScreen } from '@Pages/SplashScreen';
 
 
-
 const Tab = createBottomTabNavigator();
-
 
 export const Routes = () => {
     const [showSplash, setShowSplash] = useState(true);
@@ -23,7 +21,7 @@ export const Routes = () => {
     }, []);
 
     if (showSplash) {
-        return <SplashScreen />;
+        return <SplashScreen testID='SplashScreen' />;
     }
     return (
         <>

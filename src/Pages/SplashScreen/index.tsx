@@ -2,31 +2,29 @@ import React, { useEffect } from 'react';
 
 import { Container, Splash } from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NavigationProp } from '@react-navigation/native';
+import { assignTestId } from '@Src/utils/QualityAssurance';
 
 export interface SplashScreenProps {
-
+    testID: string;
 }
 
-export const SplashScreen: React.FC<SplashScreenProps> = () => {
+export const SplashScreen: React.FC<SplashScreenProps> = ({ testID }) => {
 
     useEffect(() => {
         const showSplash = async () => {
-            try {
-                const splashShown = await AsyncStorage.getItem('splashShown');
-                if (!splashShown) {
-                    await AsyncStorage.setItem('splashShown', 'true');
-                }
-            } catch (error) {
-                console.error('Error reading or setting splashShown:', error);
+            const splashShown = await AsyncStorage.getItem('splashShown');
+            if (!splashShown) {
+                await AsyncStorage.setItem('splashShown', 'true');
             }
+
         };
         showSplash();
     }, []);
 
     return (
-        <Container>
+        <Container {...assignTestId('View', `${testID}`)}>
             <Splash
+                {...assignTestId('Lottie', `${testID}_lottie`)}
                 source={require('@Src/Assets/splash.json')}
                 loop={false}
                 autoPlay
