@@ -27,8 +27,8 @@ export const Btn = Styled.TouchableOpacity<IconProps>`
     border-radius: ${({ isFocused }) => isFocused ? '60px' : 0};
     justify-content: center;
     align-items: center;
-    width:  ${({ isFocused }) => isFocused ? '98px' : '98px'};
-    height: ${({ isFocused }) => isFocused ? '55px' : '45px'};
+    width:  ${({ isFocused }) => isFocused ? '125px' : '125px'};
+    height: ${({ isFocused }) => isFocused ? '48px' : '40px'};
     background-color: ${({ isFocused }) => isFocused ? Theme.colors.pink : 'transparent'};
 
 `

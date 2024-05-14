@@ -6,8 +6,10 @@ import { Dashboard } from '@Pages/Dashboard';
 import { CustomTabBar } from '@Src/Components/CustomTabBar';
 import { StatusBar } from 'expo-status-bar';
 import { Search } from '@Pages/Search';
-import { SplashScreen } from '@Pages/SplashScreen';
+
 import { Wallet } from '@Pages/Wallet';
+import { SplashScreen } from '@Pages/SplashScreen';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -22,7 +24,7 @@ export const Routes = () => {
     }, []);
 
     if (showSplash) {
-        return <SplashScreen testID='SplashScreen' />;
+        return <SplashScreen />;
     }
     return (
         <>
