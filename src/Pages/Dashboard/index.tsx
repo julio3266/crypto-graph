@@ -1,14 +1,36 @@
-import React from 'react';
-import { SplashScreen } from '@Pages/SplashScreen';
+import React, { useState } from 'react';
 import { AppContent } from '@Src/Components/AppContent';
-import { Text } from 'react-native';
+import { Chart, chartType } from '@Src/Components/Chart';
+import { Btn, Header, Icon } from './styles';
+
 
 
 
 export const Dashboard = () => {
+    const [selectedChart, setSelectedChart] = useState<chartType>('Line')
+
+    const handlePress = (chartType: 'Line' | 'Candle') => {
+        setSelectedChart(chartType);
+    };
+
     return (
         <AppContent>
-            <Text style={{ color: '#fff', textAlign: 'center' }}>Home</Text>
+            <Header>
+                <Btn onPress={() => { handlePress('Line') }}>
+                    <Icon
+                        selected={selectedChart === 'Line'}
+                        name={'chart-line'}
+                    />
+                </Btn>
+                <Btn onPress={() => { handlePress('Candle') }}>
+                    <Icon
+                        name={'chart-bar'}
+                        selected={selectedChart === 'Candle'}
+                    />
+                </Btn>
+            </Header>
+            <Chart type={selectedChart} />
         </AppContent>
-    )
-}
+    );
+};
+

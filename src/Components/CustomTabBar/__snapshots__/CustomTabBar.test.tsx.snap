@@ -57,10 +57,10 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
           "borderBottomRightRadius": 60,
           "borderTopLeftRadius": 60,
           "borderTopRightRadius": 60,
-          "height": 55,
+          "height": 48,
           "justifyContent": "center",
           "opacity": 1,
-          "width": 98,
+          "width": 125,
         }
       }
       testID="TouchableOpacity_CustomTabBarID_tabBarBtn_0"
@@ -179,10 +179,10 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
           "borderBottomRightRadius": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
-          "height": 45,
+          "height": 40,
           "justifyContent": "center",
           "opacity": 1,
-          "width": 98,
+          "width": 125,
         }
       }
       testID="TouchableOpacity_CustomTabBarID_tabBarBtn_1"
