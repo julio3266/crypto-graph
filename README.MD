@@ -1,6 +1,6 @@
 # CryptoApp - React Native App - Expo
 <p align="center">
- <img  src="https://ibb.co/PzrdXXt" alt="crypto-App-Simulator - React" width="250" height="550" />
+ <img  src="https://i.ibb.co/5x1Ppp2/Simulator-Screen-Shot-i-Phone-12-2024-05-17-at-00-39-03.png" alt="crypto-App-Simulator - React" width="250" height="550" />
 </p>
 
 Esse projeto foi desenvolvido em React Native - Expo com TypeScript
