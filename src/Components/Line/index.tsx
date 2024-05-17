@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Canvas,
     Path,
@@ -14,8 +14,12 @@ import {
 import Theme from '@Global/Theme';
 import { area, line, scaleLinear, scaleTime } from 'd3';
 import { Easing } from 'react-native';
+import { useChart } from '@Src/hooks/useChart';
 
-export const SOCKET_URL = "wss://nbstream.binance.com/eoptions/ws";
+
+
+
+
 const GRAPH_HEIGHT = 250;
 const GRAPH_WIDTH = Theme.dimensions.widthScreen;
 
@@ -31,6 +35,8 @@ export interface GraphData {
     area: SkPath;
 }
 
+
+
 export const Line: React.FC = ({ }) => {
     const transition = useValue(1);
     const state = useValue({
@@ -38,9 +44,23 @@ export const Line: React.FC = ({ }) => {
         next: 1,
     });
 
+    const candleData = useChart();
     const [data, setData] = useState<DataPoint[]>([]);
     const [latestDataPoint, setLatestDataPoint] = useState<DataPoint | null>(null);
     const font = useFont(require("@Src/Assets/Roboto-Light.ttf"), 12);
+
+    useEffect(() => {
+        if (candleData && candleData.length > 0) {
+            const newDataPoint = {
+                date: new Date().toISOString(),
+                value: candleData[candleData.length - 1].close
+            };
+
+            setData(prevData => [...prevData, newDataPoint].slice(-30)); // Manter apenas os últimos 30 pontos de dados
+            setLatestDataPoint(newDataPoint);
+            transitionStart();
+        }
+    }, [candleData]);
 
     const makeGraph = (data: DataPoint[]): GraphData => {
         const max = Math.max(...data.map(val => val.value));
@@ -50,6 +70,8 @@ export const Line: React.FC = ({ }) => {
         const x = scaleTime()
             .domain([new Date(data[0].date), new Date(data[data.length - 1].date)])
             .range([10, GRAPH_WIDTH - 10]);
+
+
 
         const straightLine = line<DataPoint>()
             .x(d => x(new Date(d.date)))
@@ -90,6 +112,7 @@ export const Line: React.FC = ({ }) => {
             const start = graphData[0].curve;
             const end = graphData[0].curve;
             const result = start.interpolate(end, transition.current);
+
             return result?.toSVGString() ?? '0';
         }
         return '0';
@@ -100,69 +123,23 @@ export const Line: React.FC = ({ }) => {
             const start = graphData[0].area;
             const end = graphData[0].area;
             const result = start.interpolate(end, transition.current);
+
             return result?.toSVGString() ?? '0';
         }
         return '0';
     }, [state, transition, graphData]);
 
-    const handleNewData = (newData: DataPoint) => {
-        setData((prevData) => {
-            const updatedData = [...prevData, newData].slice(-30);
-            transitionStart();
-            return updatedData;
-        });
-        setLatestDataPoint(newData);
-    };
-
-    const dataBuffer = useRef<DataPoint[]>([]);
-
-    useEffect(() => {
-        const ws = new WebSocket(SOCKET_URL);
-
-        ws.onopen = () => {
-            ws.send(JSON.stringify({
-                method: "SUBSCRIBE",
-                params: ["ETHUSDT@index"],
-                id: 1
-            }));
-        };
-
-        ws.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            if (data.e === 'index') {
-                dataBuffer.current.push({ date: new Date().toISOString(), value: parseFloat(data.p) });
-            }
-        };
-
-        ws.onclose = () => {
-
-        };
-
-        ws.onerror = (error) => {
-
-        };
-
-        const intervalId = setInterval(() => {
-            if (dataBuffer.current.length > 0) {
-                handleNewData(dataBuffer.current[dataBuffer.current.length - 1]);
-                dataBuffer.current = [];
-            }
-        }, 3000);
-
-        return () => {
-            ws.close();
-            clearInterval(intervalId);
-        };
-    }, []);
     if (!font) {
-        return null
+        return null;
     }
+
     return (
         <Canvas
             style={{
                 width: GRAPH_WIDTH,
                 height: GRAPH_HEIGHT,
-            }}>
+            }}
+        >
             {graphData.length > 0 && (
                 <>
                     <Path path={areaPath} color={`${Theme.colors.pink}55`} />
@@ -182,12 +159,11 @@ export const Line: React.FC = ({ }) => {
                                 font={font}
                                 color={Theme.colors.white}
                             />
-
                         </>
                     )}
                 </>
             )}
         </Canvas>
-
     );
 };
+``

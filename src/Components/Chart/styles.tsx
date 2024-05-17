@@ -9,7 +9,6 @@ export const ChartContainer = Styled.View`
   width: ${width}px;
   height: 43%;
   background-color: ${({ theme }) => theme.colors.secondary};
-  justify-content: center;
   align-items: center;
   border-radius: 25px;
   elevation: 4;
