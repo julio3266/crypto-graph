@@ -6,7 +6,7 @@ import { Title } from './styles';
 export const Wallet = () => {
     return (
         <AppContent>
-            <Title>Wallet</Title>
+            <Title>Hello World, esta é a pagina Wallet</Title>
         </AppContent>
     )
 }
