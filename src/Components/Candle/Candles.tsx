@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { ScaleLinear } from 'd3';
-import { Line, Rect } from 'react-native-svg';
+import Svg, { Line, Rect } from 'react-native-svg';
 import Animated, { Easing, useSharedValue, useAnimatedProps, withTiming } from 'react-native-reanimated';
+import { View } from 'react-native';
 
 const MARGIN = 2;
 
@@ -83,7 +84,7 @@ export const Candles: React.FC<CandlesProps> = ({
             />
             <AnimatedRect
                 x={x + MARGIN}
-                width={width - MARGIN * 2}
+                width={7}
                 fill={fill}
                 animatedProps={animatedRectProps}
             />

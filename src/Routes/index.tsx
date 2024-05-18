@@ -23,23 +23,30 @@ export const Routes = () => {
         }, 4000);
     }, []);
 
-    if (showSplash) {
-        return <SplashScreen />;
-    }
+
     return (
         <>
             <StatusBar style='light' />
-            <NavigationContainer>
-                <Tab.Navigator
-                    initialRouteName='Home'
-                    screenOptions={{ headerShown: false }}
-                    tabBar={(props: BottomTabBarProps) => <CustomTabBar {...props} />}
-                >
-                    <Tab.Screen name="Home" component={Dashboard} />
-                    <Tab.Screen name="Search" component={Search} />
-                    <Tab.Screen name="Wallet" component={Wallet} />
-                </Tab.Navigator>
-            </NavigationContainer>
+            {
+                showSplash ? (
+                    <SplashScreen />
+                ) :
+                    (
+                        <NavigationContainer>
+                            <Tab.Navigator
+                                initialRouteName='Home'
+                                screenOptions={{ headerShown: false }}
+                                tabBar={(props: BottomTabBarProps) => <CustomTabBar {...props} />}
+                            >
+                                <Tab.Screen name="Home" component={Dashboard} />
+                                <Tab.Screen name="Search" component={Search} />
+                                <Tab.Screen name="Wallet" component={Wallet} />
+                            </Tab.Navigator>
+                        </NavigationContainer>
+                    )
+            }
+
+
 
         </>
     )
