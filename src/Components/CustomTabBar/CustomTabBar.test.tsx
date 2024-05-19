@@ -56,7 +56,8 @@ describe("Components/CustomTabBar", () => {
         routeNames: ['Route1', 'Route2'],
         routes: [
             { name: 'Home', key: 'Home', params: undefined },
-            { name: 'Details', key: 'Details', params: undefined },
+            { name: 'Search', key: 'Search', params: undefined },
+            { name: 'Candle', key: 'Candle', params: undefined },
         ],
         type: 'tab',
         stale: false,

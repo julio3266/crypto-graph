@@ -1,5 +1,5 @@
 import * as React from "react"
-import Svg, { SvgProps, Path, Circle, ClipPath, Defs, G } from "react-native-svg"
+import Svg, { SvgProps, Path, Circle, ClipPath, Defs, G, Rect } from "react-native-svg"
 
 
 interface SVGRProps {
@@ -152,3 +152,40 @@ export const Wallet = ({ title, titleId, color, ...props }: SvgProps & SVGRProps
     </Svg>
 
 )
+
+
+
+
+export const CandleIcon = ({ title, titleId, color, ...props }: SvgProps & SVGRProps) => (
+    <Svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        {...props}
+    >
+        <Rect
+            x="3"
+            y="10"
+            width="4"
+            height="11"
+            fill={color}
+        />
+        <Rect
+            x="10"
+            y="3"
+            width="4"
+            height="18"
+            fill={color}
+        />
+        <Rect
+            x="17"
+            y="6"
+            width="4"
+            height="15"
+            fill={color}
+        />
+    </Svg>
+)
+
+

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { AppContent } from '@Src/Components/AppContent';
 import { Chart, chartType } from '@Src/Components/Chart';
 import { Btn, Header, Icon } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 
-export const Dashboard = () => {
+export const Dashboard = ({ navigation }: any) => {
+
     const [selectedChart, setSelectedChart] = useState<chartType>('Line')
 
     const handlePress = (chartType: 'Line' | 'Candle') => {
@@ -22,7 +24,7 @@ export const Dashboard = () => {
                         name={'chart-line'}
                     />
                 </Btn>
-                <Btn onPress={() => { handlePress('Candle') }}>
+                <Btn onPress={() => { navigation.navigate('Candle') }}>
                     <Icon
                         name={'chart-bar'}
                         selected={selectedChart === 'Candle'}

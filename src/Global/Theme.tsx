@@ -13,6 +13,8 @@ export default {
         secondaryLight: '#6F6C99',
         greenLight: '#50E3C2',
         pink: '#FF409A',
+        green: '#4AFA9A',
+        red: '#E33F64',
         white: '#fff'
     },
     dimensions: {

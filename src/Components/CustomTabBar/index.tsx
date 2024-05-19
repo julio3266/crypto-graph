@@ -1,8 +1,9 @@
 import React from "react";
-import { AnimatedView, Btn, Container, HomeIcon, SearchIcon, Title, WalletIcon } from './styles'
+import { AnimatedView, Btn, Container, HomeIcon, SearchIcon, Title, CandleIconStyled } from './styles'
 
 import { assignTestId } from "@Src/utils/QualityAssurance";
-import { NavigationHelpers, ParamListBase, TabNavigationState, useNavigation } from "@react-navigation/native";
+import { NavigationHelpers, ParamListBase, TabNavigationState } from "@react-navigation/native";
+import { MaterialIcons } from '@expo/vector-icons';
 import { BottomTabDescriptorMap, BottomTabNavigationEventMap } from "@react-navigation/bottom-tabs/lib/typescript/src/types";
 import { Animated } from "react-native";
 
@@ -73,9 +74,9 @@ export const CustomTabBar: React.FC<CustomTabBarProps> = ({
                                             {isFocused && (<Title>{route.name}</Title>)}
                                         </>
                                     ) ||
-                                    route.name === 'Wallet' && (
+                                    route.name === 'Candle' && (
                                         <>
-                                            <WalletIcon isFocused={isFocused} />
+                                            <CandleIconStyled isFocused={isFocused} />
                                             {isFocused && (<Title>{route.name}</Title>)}
                                         </>
                                     )

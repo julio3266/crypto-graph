@@ -186,7 +186,193 @@ exports[`Components/CustomTabBar should render CustomTabBar component 1`] = `
         }
       }
       testID="TouchableOpacity_CustomTabBarID_tabBarBtn_1"
-    />
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={30}
+        bbWidth={30}
+        fill="none"
+        focusable={false}
+        height={30}
+        isFocused={false}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        stroke="#FF409A"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {},
+            {
+              "flex": 0,
+              "height": 30,
+              "width": 30,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width={30}
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={4294918298}
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        >
+          <RNSVGCircle
+            cx={11}
+            cy={11}
+            r={8}
+          />
+          <RNSVGPath
+            d="m21 21-4.35-4.35"
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+  <View
+    accessible={false}
+    collapsable={false}
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": "35%",
+        "justifyContent": "center",
+        "opacity": 0.5,
+        "transform": [
+          {
+            "scaleX": 1,
+          },
+          {
+            "scaleY": 1,
+          },
+        ],
+      }
+    }
+    testID="Lottie_CustomTabBarID_tabBarAnimatedView_2"
+  >
+    <View
+      accessible={false}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "height": 40,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 125,
+        }
+      }
+      testID="TouchableOpacity_CustomTabBarID_tabBarBtn_2"
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="24"
+        bbWidth="24"
+        fill="none"
+        focusable={false}
+        height="24"
+        isFocused={false}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {},
+            {
+              "flex": 0,
+              "height": 24,
+              "width": 24,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+        width="24"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGRect
+            fill={4294918298}
+            height="11"
+            propList={
+              [
+                "fill",
+              ]
+            }
+            width="4"
+            x="3"
+            y="10"
+          />
+          <RNSVGRect
+            fill={4294918298}
+            height="18"
+            propList={
+              [
+                "fill",
+              ]
+            }
+            width="4"
+            x="10"
+            y="3"
+          />
+          <RNSVGRect
+            fill={4294918298}
+            height="15"
+            propList={
+              [
+                "fill",
+              ]
+            }
+            width="4"
+            x="17"
+            y="6"
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
   </View>
 </View>
 `;

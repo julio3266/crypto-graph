@@ -1,6 +1,6 @@
 import Styled from 'styled-components/native'
 import { Animated } from 'react-native'
-import { Home, Search, Wallet } from '@Src/Assets/svg'
+import { CandleIcon, Home, Search, Wallet } from '@Src/Assets/svg'
 import Theme from '@Global/Theme';
 import { SvgProps } from 'react-native-svg';
 
@@ -62,7 +62,7 @@ export const SearchIcon = Styled(Search).attrs<IconProps>(({ isFocused }) => ({
 `;
 
 
-export const WalletIcon = Styled(Wallet).attrs<IconProps>(({ isFocused }) => ({
+export const CandleIconStyled = Styled(CandleIcon).attrs<IconProps>(({ isFocused }) => ({
     color: isFocused ? Theme.colors.white : Theme.colors.pink
 })) <SvgProps>`
     

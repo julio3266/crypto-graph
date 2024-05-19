@@ -9,6 +9,7 @@ import { Search } from '@Pages/Search';
 
 import { Wallet } from '@Pages/Wallet';
 import { SplashScreen } from '@Pages/SplashScreen';
+import { CandleChart } from '@Src/Components/CandleChart'
 
 
 
@@ -40,14 +41,11 @@ export const Routes = () => {
                             >
                                 <Tab.Screen name="Home" component={Dashboard} />
                                 <Tab.Screen name="Search" component={Search} />
-                                <Tab.Screen name="Wallet" component={Wallet} />
+                                <Tab.Screen name="Candle" component={CandleChart} />
                             </Tab.Navigator>
                         </NavigationContainer>
                     )
             }
-
-
-
         </>
     )
 }
