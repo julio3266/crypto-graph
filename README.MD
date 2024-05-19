@@ -1,8 +1,10 @@
 # CryptoApp - React Native App - Expo
 <p align="center">
- <img  src="https://i.ibb.co/5x1Ppp2/Simulator-Screen-Shot-i-Phone-12-2024-05-17-at-00-39-03.png" alt="crypto-App-Simulator - React" width="250" height="550" />
+ <img  src="https://i.ibb.co/ynxvpTB/Simulator-Screen-Shot-i-Phone-12-2024-05-19-at-13-23-43.png" alt="crypto-App-Simulator - React" width="250" height="550" />
 </p>
-
+<p align="center">
+ <img  src="https://i.ibb.co/BzJWX5q/Simulator-Screen-Shot-i-Phone-12-2024-05-19-at-13-27-16.png" alt="crypto-App-Simulator - React" width="250" height="550" />
+</p>
 Esse projeto foi desenvolvido em React Native - Expo com TypeScript
 
 Abaixo temos as principais tecnologias por trás desta aplicação
@@ -16,6 +18,12 @@ Abaixo temos as principais tecnologias por trás desta aplicação
 - **UI Components**
   - **StyledComponents**
   - [https://styled-components.com/docs/basics#getting-started](https://styled-components.com/docs/basics#getting-started)
+- **Custom Chart Components**
+  - **3D**
+  - **React-native-svg**
+  - **react-native-skia**
+  - **react-native-redash**
+  - **react-native-reanimated**
 
 ## 🚀 Como começar
 

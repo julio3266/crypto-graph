@@ -18,17 +18,7 @@ export const Chart: React.FC<ChartProps> = ({
 
     return (
         <ChartContainer>
-            {
-                type === 'Line' && (
-                    <Line />
-                )
-            }
-            {
-                type === 'Candle' && (
-                    <Candle />
-                )
-            }
-
+            <Line />
         </ChartContainer>
     );
 };

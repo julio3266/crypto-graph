@@ -20,7 +20,7 @@ import { useChart } from '@Src/hooks/useChart';
 
 
 
-const GRAPH_HEIGHT = 250;
+const GRAPH_HEIGHT = 260;
 const GRAPH_WIDTH = Theme.dimensions.widthScreen;
 
 export interface DataPoint {
