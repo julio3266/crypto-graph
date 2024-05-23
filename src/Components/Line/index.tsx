@@ -16,10 +16,6 @@ import { area, line, scaleLinear, scaleTime } from 'd3';
 import { Easing } from 'react-native';
 import { useChart } from '@Src/hooks/useChart';
 
-
-
-
-
 const GRAPH_HEIGHT = 260;
 const GRAPH_WIDTH = Theme.dimensions.widthScreen;
 

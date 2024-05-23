@@ -53,8 +53,8 @@ export const Values = styled(View)`
   flex: 1;
 `;
 
-export const Value = styled(Text)`
-  color: white;
+export const Value = styled(Text) <any>`
+  color: ${props => props.valueColor};
   font-size: 16px;
 `;
 

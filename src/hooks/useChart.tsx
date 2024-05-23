@@ -1,9 +1,10 @@
+import { Candle } from "@Src/Components/CandleChart/Candle";
 import { format, getDate } from "date-fns";
 import { useEffect, useRef, useState } from "react";
-import { CandlesModel } from "../Components/Candle/Candles";
+
 
 export const useChart = () => {
-    const [chartData, setChartData] = useState<CandlesModel[]>([]);
+    const [chartData, setChartData] = useState<Candle[]>([]);
     const socket = useRef<WebSocket | null>(null);
 
     useEffect(() => {
@@ -15,7 +16,7 @@ export const useChart = () => {
             const newDate = new Date(E);
             const newDateFormat = format(newDate, 'yyyy-MM-dd HH:mm');
             const day = getDate(newDate);
-            const newCandleData: CandlesModel = {
+            const newCandleData: Candle = {
                 day: day,
                 date: newDateFormat,
                 open: parseFloat(k.o),

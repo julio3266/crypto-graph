@@ -7,7 +7,6 @@ import { CustomTabBar } from '@Src/Components/CustomTabBar';
 import { StatusBar } from 'expo-status-bar';
 import { Search } from '@Pages/Search';
 
-import { Wallet } from '@Pages/Wallet';
 import { SplashScreen } from '@Pages/SplashScreen';
 import { CandleChart } from '@Src/Components/CandleChart'
 
