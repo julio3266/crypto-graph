@@ -1,26 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ChartContainer } from './styles';
-import { Line } from '../Line';
-import { Candle } from '../Candle';
-
-
+import React from 'react'
+import { ChartContainer } from './styles'
+import { Line } from '../Line'
 
 export type chartType = 'Line' | 'Candle'
 
 interface ChartProps {
-    type: chartType;
-
+  type: chartType
 }
 
-export const Chart: React.FC<ChartProps> = ({
-    type
-}) => {
-
-    return (
-        <ChartContainer>
-            <Line />
-        </ChartContainer>
-    );
-};
-
-
+export const Chart: React.FC<ChartProps> = ({ type }) => {
+  return (
+    <ChartContainer>
+      <Line />
+    </ChartContainer>
+  )
+}
